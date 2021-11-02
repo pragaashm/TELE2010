@@ -1,0 +1,12 @@
+
+State Machine - |fsm_1|c_state
+Name c_state.y0 c_state.y1 c_state.y2 c_state.y3 c_state.y4 c_state.y5 c_state.y6 c_state.y7 c_state.y8 
+c_state.y8 0 0 0 0 0 0 0 0 0 
+c_state.y7 0 0 0 0 0 0 0 1 1 
+c_state.y6 0 0 0 0 0 0 1 0 1 
+c_state.y5 0 0 0 0 0 1 0 0 1 
+c_state.y4 0 0 0 0 1 0 0 0 1 
+c_state.y3 0 0 0 1 0 0 0 0 1 
+c_state.y2 0 0 1 0 0 0 0 0 1 
+c_state.y1 0 1 0 0 0 0 0 0 1 
+c_state.y0 1 0 0 0 0 0 0 0 1 

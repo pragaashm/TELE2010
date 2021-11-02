@@ -1,0 +1,107 @@
+|part_3
+SW[0] => FullAdder:FA0.b
+SW[1] => FullAdder:FA1.b
+SW[2] => FullAdder:FA2.b
+SW[3] => FullAdder:FA3.b
+SW[4] => FullAdder:FA0.a
+SW[5] => FullAdder:FA1.a
+SW[6] => FullAdder:FA2.a
+SW[7] => FullAdder:FA3.a
+SW[8] => FullAdder:FA0.ci
+SW[9] => ~NO_FANOUT~
+LEDR[0] <= FullAdder:FA0.s
+LEDR[1] <= FullAdder:FA1.s
+LEDR[2] <= FullAdder:FA2.s
+LEDR[3] <= FullAdder:FA3.s
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= FullAdder:FA3.co
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+
+
+|part_3|FullAdder:FA0
+a => co.IN0
+a => co.IN0
+a => s.IN0
+a => s.IN0
+a => s.IN0
+b => co.IN0
+b => co.IN1
+b => s.IN1
+b => s.IN1
+b => s.IN1
+ci => co.IN1
+ci => co.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|FullAdder:FA1
+a => co.IN0
+a => co.IN0
+a => s.IN0
+a => s.IN0
+a => s.IN0
+b => co.IN0
+b => co.IN1
+b => s.IN1
+b => s.IN1
+b => s.IN1
+ci => co.IN1
+ci => co.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|FullAdder:FA2
+a => co.IN0
+a => co.IN0
+a => s.IN0
+a => s.IN0
+a => s.IN0
+b => co.IN0
+b => co.IN1
+b => s.IN1
+b => s.IN1
+b => s.IN1
+ci => co.IN1
+ci => co.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|FullAdder:FA3
+a => co.IN0
+a => co.IN0
+a => s.IN0
+a => s.IN0
+a => s.IN0
+b => co.IN0
+b => co.IN1
+b => s.IN1
+b => s.IN1
+b => s.IN1
+ci => co.IN1
+ci => co.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+ci => s.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+

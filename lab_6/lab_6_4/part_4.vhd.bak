@@ -1,0 +1,142 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_signed.all;
+
+ENTITY Lab_6 IS
+
+	PORT 
+	( 
+		SW : IN STD_LOGIC_VECTOR(9 downto 0);
+		HEX0,HEX1,HEX2,HEX3 : OUT STD_LOGIC_VECTOR(0 to 6);
+		LEDR : OUT STD_LOGIC_VECTOR(9 downto 0);
+        KEY : IN STD_LOGIC_VECTOR(1 downto 0)
+		);
+
+END Lab_6 ;
+
+ARCHITECTURE Behavior OF Lab_6 IS
+	signal Clk,R : STD_LOGIC;
+    signal Set : STD_LOGIC_VECTOR(1 downto 0);
+	signal A,B,SW_val : STD_LOGIC_VECTOR(7 downto 0);
+	signal S : STD_LOGIC_VECTOR(16 downto 0);
+BEGIN
+    Clk <= KEY(1);
+    R <= KEY(0);
+    Set <= SW(9 downto 8);
+    SW_val <= SW(7 downto 0);
+
+	process(Clk,A,B)
+    variable i_vec : STD_LOGIC_VECTOR(7 downto 0);
+    variable S_i : STD_LOGIC_VECTOR(7 downto 0);
+    variable S_var : STD_LOGIC_VECTOR(16 downto 0);
+BEGIN
+    if(rising_edge(Clk)) then
+        if(R = '0') then
+            S <= "00000000000000000";
+            A <= "00000000";
+            B <= "00000000";
+        else
+            if(Set = "10") then
+                A <= SW_val;
+            elsif(Set = "01") then
+                B <= SW_val;
+            elsif(Set = "11") then
+                for i in 0 to 7 loop
+                    i_vec := (A(7) and B(i), A(6) and B(i), A(5) and B(i), A(4) and B(i), A(3) and B(i), A(2) and B(i), A(1) and B(i), A(0) and B(i));
+                    S_i := S_var((i+7) downto i);
+                    S_var((i+8) downto i) := (("0" & S_i) + ("0" & i_vec));
+                end loop;
+                S <= S_var;
+                A <= "00000000";
+                B <= "00000000";
+            end if;
+        end if;
+    end if;
+end process;
+	process (S,Set,A,B)
+BEGIN
+    case Set is
+    when "10" => LEDR(7 downto 0) <= A;
+    when "01" => LEDR(7 downto 0) <= B;
+    when others => LEDR(7 downto 0) <= "00000000";
+    end case;
+	case S(3 downto 0) is
+        when "0000"=> HEX0 <="0000001";  -- '0'
+        when "0001"=> HEX0 <="1001111";  -- '1'
+        when "0010"=> HEX0 <="0010010";  -- '2'
+        when "0011"=> HEX0 <="0000110";  -- '3'
+        when "0100"=> HEX0 <="1001100";  -- '4' 
+        when "0101"=> HEX0 <="0100100";  -- '5'
+        when "0110"=> HEX0 <="0100000";  -- '6'
+        when "0111"=> HEX0 <="0001111";  -- '7'
+        when "1000"=> HEX0 <="0000000";  -- '8'
+        when "1001"=> HEX0 <="0000100";  -- '9'
+        when "1010"=> HEX0 <="0001000";  -- 'A'
+        when "1011"=> HEX0 <="1100000";  -- 'b'
+        when "1100"=> HEX0 <="0110001";  -- 'C'
+        when "1101"=> HEX0 <="1000010";  -- 'd'
+        when "1110"=> HEX0 <="0110000";  -- 'E'
+        when "1111"=> HEX0 <="0111000";  -- 'F'
+        when others =>  NULL;
+    end case;
+    case S(7 downto 4) is
+        when "0000"=> HEX1 <="0000001";  -- '0'
+        when "0001"=> HEX1 <="1001111";  -- '1'
+        when "0010"=> HEX1 <="0010010";  -- '2'
+        when "0011"=> HEX1 <="0000110";  -- '3'
+        when "0100"=> HEX1 <="1001100";  -- '4' 
+        when "0101"=> HEX1 <="0100100";  -- '5'
+        when "0110"=> HEX1 <="0100000";  -- '6'
+        when "0111"=> HEX1 <="0001111";  -- '7'
+        when "1000"=> HEX1 <="0000000";  -- '8'
+        when "1001"=> HEX1 <="0000100";  -- '9'
+        when "1010"=> HEX1 <="0001000";  -- 'A'
+        when "1011"=> HEX1 <="1100000";  -- 'b'
+        when "1100"=> HEX1 <="0110001";  -- 'C'
+        when "1101"=> HEX1 <="1000010";  -- 'd'
+        when "1110"=> HEX1 <="0110000";  -- 'E'
+        when "1111"=> HEX1 <="0111000";  -- 'F'
+        when others =>  NULL;
+    end case;
+    case S(11 downto 8) is
+        when "0000"=> HEX2 <="0000001";  -- '0'
+        when "0001"=> HEX2 <="1001111";  -- '1'
+        when "0010"=> HEX2 <="0010010";  -- '2'
+        when "0011"=> HEX2 <="0000110";  -- '3'
+        when "0100"=> HEX2 <="1001100";  -- '4' 
+        when "0101"=> HEX2 <="0100100";  -- '5'
+        when "0110"=> HEX2 <="0100000";  -- '6'
+        when "0111"=> HEX2 <="0001111";  -- '7'
+        when "1000"=> HEX2 <="0000000";  -- '8'
+        when "1001"=> HEX2 <="0000100";  -- '9'
+        when "1010"=> HEX2 <="0001000";  -- 'A'
+        when "1011"=> HEX2 <="1100000";  -- 'b'
+        when "1100"=> HEX2 <="0110001";  -- 'C'
+        when "1101"=> HEX2 <="1000010";  -- 'd'
+        when "1110"=> HEX2 <="0110000";  -- 'E'
+        when "1111"=> HEX2 <="0111000";  -- 'F'
+        when others =>  NULL;
+    end case;
+    case S(15 downto 12) is
+        when "0000"=> HEX3 <="0000001";  -- '0'
+        when "0001"=> HEX3 <="1001111";  -- '1'
+        when "0010"=> HEX3 <="0010010";  -- '2'
+        when "0011"=> HEX3 <="0000110";  -- '3'
+        when "0100"=> HEX3 <="1001100";  -- '4' 
+        when "0101"=> HEX3 <="0100100";  -- '5'
+        when "0110"=> HEX3 <="0100000";  -- '6'
+        when "0111"=> HEX3 <="0001111";  -- '7'
+        when "1000"=> HEX3 <="0000000";  -- '8'
+        when "1001"=> HEX3 <="0000100";  -- '9'
+        when "1010"=> HEX3 <="0001000";  -- 'A'
+        when "1011"=> HEX3 <="1100000";  -- 'b'
+        when "1100"=> HEX3 <="0110001";  -- 'C'
+        when "1101"=> HEX3 <="1000010";  -- 'd'
+        when "1110"=> HEX3 <="0110000";  -- 'E'
+        when "1111"=> HEX3 <="0111000";  -- 'F'
+        when others =>  NULL;
+    end case;
+end process;
+	
+END Behavior;

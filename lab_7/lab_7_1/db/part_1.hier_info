@@ -1,0 +1,45 @@
+|part_1
+KEY[0] => counter:count_8.R
+KEY[1] => counter:count_8.clk
+LEDR[0] <= counter:count_8.q[0]
+LEDR[1] <= counter:count_8.q[1]
+LEDR[2] <= counter:count_8.q[2]
+LEDR[3] <= counter:count_8.q[3]
+LEDR[4] <= counter:count_8.q[4]
+LEDR[5] <= counter:count_8.q[5]
+LEDR[6] <= counter:count_8.q[6]
+LEDR[7] <= counter:count_8.q[7]
+LEDR[8] <= <GND>
+LEDR[9] <= counter:count_8.rollover
+
+
+|part_1|counter:count_8
+clk => rollover~reg0.CLK
+clk => q0[0].CLK
+clk => q0[1].CLK
+clk => q0[2].CLK
+clk => q0[3].CLK
+clk => q0[4].CLK
+clk => q0[5].CLK
+clk => q0[6].CLK
+clk => q0[7].CLK
+R => rollover~reg0.ACLR
+R => q0[0].ACLR
+R => q0[1].ACLR
+R => q0[2].ACLR
+R => q0[3].ACLR
+R => q0[4].ACLR
+R => q0[5].ACLR
+R => q0[6].ACLR
+R => q0[7].ACLR
+q[0] <= q0[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q0[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q0[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q0[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q0[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q0[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q0[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q0[7].DB_MAX_OUTPUT_PORT_TYPE
+rollover <= rollover~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

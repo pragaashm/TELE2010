@@ -1,0 +1,16 @@
+|part_2
+SW[0] => part2_1:part2_2.d
+SW[1] => part2_1:part2_2.clk
+SW[1] => LEDR[1].DATAIN
+LEDR[0] <= part2_1:part2_2.q
+LEDR[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_2|part2_1:part2_2
+clk => s_g.IN0
+clk => r_g.IN1
+d => s_g.IN1
+d => r.DATAIN
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+

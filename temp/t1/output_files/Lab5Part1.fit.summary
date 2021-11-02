@@ -1,0 +1,18 @@
+Fitter Status : Successful - Wed Nov 04 18:25:28 2020
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : Lab5Part1
+Top-level Entity Name : Lab5Part1
+Family : MAX 10
+Device : 10M50DCF484C7G
+Timing Models : Final
+Total logic elements : 12 / 49,760 ( < 1 % )
+    Total combinational functions : 12 / 49,760 ( < 1 % )
+    Dedicated logic registers : 8 / 49,760 ( < 1 % )
+Total registers : 8
+Total pins : 10 / 360 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0

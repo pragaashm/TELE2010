@@ -1,0 +1,25 @@
+|part_3
+SW[0] => part2_1:master.d
+SW[1] => part2_1:slave.clk
+SW[1] => LEDR[1].DATAIN
+SW[1] => part2_1:master.clk
+LEDR[0] << part2_1:slave.q
+LEDR[1] << SW[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|part2_1:master
+clk => s_g.IN0
+clk => r_g.IN1
+d => s_g.IN1
+d => r.DATAIN
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|part2_1:slave
+clk => s_g.IN0
+clk => r_g.IN1
+d => s_g.IN1
+d => r.DATAIN
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+

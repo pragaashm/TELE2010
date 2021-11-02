@@ -1,0 +1,28 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.ALL;
+
+
+ENTITY O_4 IS
+	PORT( 
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	HEX0,HEX1,HEX2;HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
+	
+END O_5;
+
+ARCHITECTURE hex7_2 OF O_5 IS
+   SIGNAL S : STD_LOGIC_VECTOR (1 DOWNTO 0);
+	SIGNAL M : STD_LOGIC_VECTOR(6 DOWNTO 0);
+
+
+BEGIN
+
+	S <= SW(9 DOWNTO 8);
+	M <= ((S(1)),  (NOT S(0)),  (S(1) AND (NOT S(0))),  (S(1) AND (NOT S(0))),  ((NOT S(1)) AND S(0)),  ((NOT S(1)) AND S(0)), (NOT S(0)));
+	HEX0 <= M;
+	HEX1 <= M;
+	HEX2 <= M;
+	
+	
+END hex7_2;

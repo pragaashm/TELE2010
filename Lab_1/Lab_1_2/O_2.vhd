@@ -1,0 +1,33 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.ALL;
+
+
+ENTITY O_2 IS
+	PORT( 
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0));
+END O_2;
+
+ARCHITECTURE muxXY OF O_2 IS
+	SIGNAL X,Y : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL M : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL S : STD_LOGIC;
+
+BEGIN
+
+	S <= SW(9);
+	Y <= SW(7 DOWNTO 4);
+	X <= SW(3 DOWNTO 0);
+
+	M <= (((NOT (S) AND X(3)) OR (S AND Y(3))),((NOT (S) AND X(2)) OR (S AND Y(2))),((NOT (S) AND X(1)) OR (S AND Y(1))),((NOT (S) AND X(0)) OR (S AND Y(0))));
+	
+	LEDR(9) <= S;
+	LEDR(3 DOWNTO 0) <= M;
+	
+	
+
+
+
+
+END muxXY;

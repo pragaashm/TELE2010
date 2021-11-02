@@ -1,0 +1,362 @@
+|part_3
+CLOCK_50 => c_26b:c26bit.clk
+CLOCK_50 => clr_clk.CLK
+LEDR[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << LEDR[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] << Hex7:disp_0.disp[6]
+HEX0[5] << Hex7:disp_0.disp[5]
+HEX0[4] << Hex7:disp_0.disp[4]
+HEX0[3] << Hex7:disp_0.disp[3]
+HEX0[2] << Hex7:disp_0.disp[2]
+HEX0[1] << Hex7:disp_0.disp[1]
+HEX0[0] << Hex7:disp_0.disp[0]
+
+
+|part_3|c_26b:c26bit
+clk => t_ff:c0.clk
+clk => t_ff:c1.clk
+clk => t_ff:c2.clk
+clk => t_ff:c3.clk
+clk => t_ff:c4.clk
+clk => t_ff:c5.clk
+clk => t_ff:c6.clk
+clk => t_ff:c7.clk
+clk => t_ff:c8.clk
+clk => t_ff:c9.clk
+clk => t_ff:c10.clk
+clk => t_ff:c11.clk
+clk => t_ff:c12.clk
+clk => t_ff:c13.clk
+clk => t_ff:c14.clk
+clk => t_ff:c15.clk
+clk => t_ff:c16.clk
+clk => t_ff:c17.clk
+clk => t_ff:c18.clk
+clk => t_ff:c19.clk
+clk => t_ff:c20.clk
+clk => t_ff:c21.clk
+clk => t_ff:c22.clk
+clk => t_ff:c23.clk
+clk => t_ff:c24.clk
+clk => t_ff:c25.clk
+en => t_int[1].IN1
+en => t_ff:c0.t
+clr => t_ff:c0.clr
+clr => t_ff:c1.clr
+clr => t_ff:c2.clr
+clr => t_ff:c3.clr
+clr => t_ff:c4.clr
+clr => t_ff:c5.clr
+clr => t_ff:c6.clr
+clr => t_ff:c7.clr
+clr => t_ff:c8.clr
+clr => t_ff:c9.clr
+clr => t_ff:c10.clr
+clr => t_ff:c11.clr
+clr => t_ff:c12.clr
+clr => t_ff:c13.clr
+clr => t_ff:c14.clr
+clr => t_ff:c15.clr
+clr => t_ff:c16.clr
+clr => t_ff:c17.clr
+clr => t_ff:c18.clr
+clr => t_ff:c19.clr
+clr => t_ff:c20.clr
+clr => t_ff:c21.clr
+clr => t_ff:c22.clr
+clr => t_ff:c23.clr
+clr => t_ff:c24.clr
+clr => t_ff:c25.clr
+o_put[0] <> o_put[0]
+o_put[1] <> o_put[1]
+o_put[2] <> o_put[2]
+o_put[3] <> o_put[3]
+o_put[4] <> o_put[4]
+o_put[5] <> o_put[5]
+o_put[6] <> o_put[6]
+o_put[7] <> o_put[7]
+o_put[8] <> o_put[8]
+o_put[9] <> o_put[9]
+o_put[10] <> o_put[10]
+o_put[11] <> o_put[11]
+o_put[12] <> o_put[12]
+o_put[13] <> o_put[13]
+o_put[14] <> o_put[14]
+o_put[15] <> o_put[15]
+o_put[16] <> o_put[16]
+o_put[17] <> o_put[17]
+o_put[18] <> o_put[18]
+o_put[19] <> o_put[19]
+o_put[20] <> o_put[20]
+o_put[21] <> o_put[21]
+o_put[22] <> o_put[22]
+o_put[23] <> o_put[23]
+o_put[24] <> o_put[24]
+o_put[25] <> o_put[25]
+
+
+|part_3|c_26b:c26bit|t_ff:c0
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c1
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c2
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c3
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c4
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c5
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c6
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c7
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c8
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c9
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c10
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c11
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c12
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c13
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c14
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c15
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c16
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c17
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c18
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c19
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c20
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c21
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c22
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c23
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c24
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_26b:c26bit|t_ff:c25
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_4b:c4bit
+clk => t_ff:c0.clk
+clk => t_ff:c1.clk
+clk => t_ff:c2.clk
+clk => t_ff:c3.clk
+en => t_int[1].IN1
+en => t_ff:c0.t
+clr => t_ff:c0.clr
+clr => t_ff:c1.clr
+clr => t_ff:c2.clr
+clr => t_ff:c3.clr
+o_put[0] <> o_put[0]
+o_put[1] <> o_put[1]
+o_put[2] <> o_put[2]
+o_put[3] <> o_put[3]
+
+
+|part_3|c_4b:c4bit|t_ff:c0
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_4b:c4bit|t_ff:c1
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_4b:c4bit|t_ff:c2
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|c_4b:c4bit|t_ff:c3
+clk => temp.CLK
+clr => temp.ACLR
+t => temp.ENA
+o_put <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part_3|Hex7:disp_0
+c[0] => Mux0.IN19
+c[0] => Mux1.IN19
+c[0] => Mux2.IN19
+c[0] => Mux3.IN19
+c[0] => Mux4.IN19
+c[0] => Mux5.IN19
+c[0] => Mux6.IN19
+c[1] => Mux0.IN18
+c[1] => Mux1.IN18
+c[1] => Mux2.IN18
+c[1] => Mux3.IN18
+c[1] => Mux4.IN18
+c[1] => Mux5.IN18
+c[1] => Mux6.IN18
+c[2] => Mux0.IN17
+c[2] => Mux1.IN17
+c[2] => Mux2.IN17
+c[2] => Mux3.IN17
+c[2] => Mux4.IN17
+c[2] => Mux5.IN17
+c[2] => Mux6.IN17
+c[3] => Mux0.IN16
+c[3] => Mux1.IN16
+c[3] => Mux2.IN16
+c[3] => Mux3.IN16
+c[3] => Mux4.IN16
+c[3] => Mux5.IN16
+c[3] => Mux6.IN16
+disp[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+disp[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+disp[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+disp[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+disp[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+disp[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+disp[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

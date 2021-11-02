@@ -1,0 +1,120 @@
+--Implementing a FSM
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity fsm_1 is
+port(		SW		: in std_logic_vector(1 downto 0);
+			KEY	: in std_logic_vector(1 downto 0);
+			LEDR	: out std_logic_vector(9 downto 0);
+			-- setting up ports for inputs and clock and data out
+			R, W, clk, Z : in std_logic;
+			data_out     : out std_logic
+			);
+end fsm_1;
+
+----------------------------------------------------------------
+
+architecture behav of fsm_1
+			
+			--defining states of FSM
+			
+			type t_states is (y8, y7, y6, y5, y4, y3, y2, y1, y0);
+			
+			--setting up one-hot codes for states
+			attribute syn_encoding : string;	
+	      attribute syn_encoding of type_states : TYPE IS "000000001, 000000010, 000000100, 000001000, 000010000, 000100000, 001000000, 010000000, 100000000";
+			
+			--Setting current and next state 
+			signal c_state, n_state : type_states; 
+			
+begin
+
+			W <= SW(1);
+			R <= SW(0);
+			clk <= KEY(0);
+
+			--setting up D Flip-flop
+			state_reg: process(clk, R)
+			begin
+			
+					if (R='1') then
+						c_state <= y8;
+					elseif (clk'event and clk='1') then
+						c_state <= n_state;
+					end if;
+					
+			end  process;
+			
+			comb: process(c_state, W)
+			begin
+			
+					case c_state is				
+						
+						when y8 =>
+						if(W = '1') then n_state <= y3;
+						else
+						n_state <= y7;
+						end if;
+			
+						when y7 =>
+						if(W = '1') then n_state <= y3;
+						else
+						n_state <= y6;
+						end if;
+			
+						when y6 =>
+						if(W = '1') then n_state <= y3;
+						else
+						n_state <= y5;
+						end if;
+			
+						when y5 =>
+						if(W = '1') then n_state <= y3;
+						else
+						n_state <= y4;
+						end if;
+			
+						when y4 =>
+						if(W = '1') then n_state <= y3;
+						else
+						n_state <= y4;
+						end if;
+						
+						when y3 =>
+						if(W = '1') then n_state <= y2;
+						else
+						n_state <= y7;
+						end if;
+						
+						when y2 =>
+						if(W = '1') then n_state <= y1;
+						else
+						n_state <= y7;
+						end if;
+						
+						when y1 =>
+						if(W = '1') then n_state <= y0;
+						else
+						n_state <= y7;
+						end if;
+						
+						when y0 =>
+						if(W = '1') then n_state <= y0;
+						else
+						n_state <= y7;
+						end if;
+					
+					end case;
+					
+		   end process comb;
+			
+end architecture behav;
+				
+			
+			
+			
+			
+
+
+			
+			
